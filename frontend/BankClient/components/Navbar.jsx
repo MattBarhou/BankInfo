@@ -62,17 +62,11 @@ export default function Navbar() {
             open={Boolean(manageAnchorEl)}
             onClose={() => handleMenuClose(setManageAnchorEl)}
           >
-            <MenuItem component={Link} to="/get-bank-by-name">
-              Get Bank by Name
+            <MenuItem component={Link} to="/get-bank">
+              Get Bank by Name/ID
             </MenuItem>
-            <MenuItem component={Link} to="/get-bank-by-id">
-              Get Bank by ID
-            </MenuItem>
-            <MenuItem component={Link} to="/update-bank-by-name">
-              Update Bank by Name
-            </MenuItem>
-            <MenuItem component={Link} to="/update-bank-by-id">
-              Update Bank by ID
+            <MenuItem component={Link} to="/update-bank">
+              Update Bank by Name/ID
             </MenuItem>
             <MenuItem component={Link} to="/delete-bank">
               Delete Bank

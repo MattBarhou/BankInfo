@@ -82,7 +82,7 @@ public class BankController {
 
     //Update bank by ID
     @PutMapping("/id/{bankID}")
-    public Bank updateBankByID(@PathVariable Integer bankID, @Valid @RequestBody Bank bank){
+    public Bank updateBankByID(@PathVariable Integer bankID,  @RequestBody Bank bank){
 
         if (bankID <= 0) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Bank ID must be a positive integer");
