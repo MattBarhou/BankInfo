@@ -74,11 +74,8 @@ export default function Navbar() {
             <MenuItem component={Link} to="/update-bank-by-id">
               Update Bank by ID
             </MenuItem>
-            <MenuItem component={Link} to="/delete-bank-by-name">
-              Delete Bank by Name
-            </MenuItem>
-            <MenuItem component={Link} to="/delete-bank-by-id">
-              Delete Bank by ID
+            <MenuItem component={Link} to="/delete-bank">
+              Delete Bank
             </MenuItem>
           </Menu>
 

@@ -6,6 +6,8 @@ import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 import Navbar from "../components/Navbar";
 import AllBanks from "../components/AllBanks";
+import CreateBank from "../components/CreateBank";
+import DeleteBank from "../components/DeleteBank";
 
 function App() {
   return (
@@ -14,13 +16,12 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/view-all-banks" element={<AllBanks />} />
-        {/* <Route path="/create-bank" element={<CreateBank />} />
-        <Route path="/get-bank-by-name" element={<GetBankByName />} />
+        <Route path="/create-bank" element={<CreateBank />} />
+        {/* <Route path="/get-bank-by-name" element={<GetBankByName />} />
         <Route path="/get-bank-by-id" element={<GetBankById />} />
         <Route path="/update-bank-by-name" element={<UpdateBankByName />} />
-        <Route path="/update-bank-by-id" element={<UpdateBankById />} />
-        <Route path="/delete-bank-by-name" element={<DeleteBankByName />} />
-        <Route path="/delete-bank-by-id" element={<DeleteBankById />} /> */}
+        <Route path="/update-bank-by-id" element={<UpdateBankById />} /> */}
+        <Route path="/delete-bank" element={<DeleteBank />} />
       </Routes>
     </Router>
   );

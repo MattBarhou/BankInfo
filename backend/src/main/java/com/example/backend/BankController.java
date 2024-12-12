@@ -3,6 +3,7 @@ package com.example.backend;
 
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -105,13 +106,12 @@ public class BankController {
     @DeleteMapping("/{bankName}")
     public ResponseEntity<String> deleteBank(@PathVariable String bankName){
 
-        if (bankName.isBlank()) {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Bank name cannot be blank");
+        try {
+            bankRepository.deleteByBankName(bankName);
+            return ResponseEntity.ok("Bank deleted successfully");
+        } catch (EmptyResultDataAccessException e) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Bank not found", e);
         }
-
-        bankRepository.deleteBankByBankName(bankName);
-
-        return ResponseEntity.ok("Bank deleted successfully");
     }
 
     //Delete bank by ID
